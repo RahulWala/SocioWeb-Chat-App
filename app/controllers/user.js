@@ -114,7 +114,7 @@ module.exports.controllerFunction = function(app){
 				// console.log(foundUser);
 				req.flash('success','Successfully logged in. Enjoy Shopping!!');
 				req.session.user = foundUser;
-				res.render('chat');
+				res.redirect('/users/chat');
 			}
 		});
 	});

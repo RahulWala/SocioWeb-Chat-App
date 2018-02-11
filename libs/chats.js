@@ -1,4 +1,5 @@
 var mongoose	= require('mongoose');
+var events 		= require('events');
 // var socketIo	= require('socket.io');
 
 require('../app/model/Group.js');
@@ -16,7 +17,7 @@ module.exports = function(server){
 	console.log(server);
 	io = require('socket.io')(server);
 
-	var ioChat = io.of('/users/chat');
+	var ioChat = io.of('/chat');
 	
 	ioChat.on('connection',function(socket){
 

@@ -2,7 +2,6 @@ var express = require('express');
 var app 	= express();
 
 var server = require('http').Server(app);
-var io = require('socket.io')(server);
 
 var logger 		 = 	require('morgan');
 var bodyParser 	 = 	require('body-parser');
@@ -39,17 +38,18 @@ app.use(methodOverride(function(req,res){
 	}
 }));
 
-	//setting the templating engine
-	app.set("view engine",'ejs');
+	//loading sockets
+	require('./libs/chats.js')(server);
+
+	app.use('/users/chat',express.static(path.join(__dirname, 'public')));
 
 	//set the view folder
 	app.set('views',path.join(__dirname+'/app/views'));
 
+	//setting the templating engine
+	app.set("view engine",'ejs');
 
-	app.use('/users/chat',express.static(path.join(__dirname, 'public')));
 
-		//loading sockets
-	require('./libs/chats.js')(server);
 
 	
 
