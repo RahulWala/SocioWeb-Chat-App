@@ -1,0 +1,27 @@
+{
+  "name": "eCart",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "latest",
+    "connect-ensure-login": "latest",
+    "connect-mongo": "latest",
+    "cookie-parser": "latest",
+    "crypto": "latest",
+    "express": "latest",
+    "express-flash": "latest",
+    "express-session": "latest",
+    "find": "^0.2.8",
+    "fs": "latest",
+    "http": "latest",
+    "ejs": "latest",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "nodemailer": "latest",
+    "path": "latest",
+    "socket.io": "latest"
+  }
+}

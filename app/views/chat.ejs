@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ./common/head.ejs%>
+</head>
+<body>
+	<% include ./common/header.ejs%>
+
+	<div class="container">
+		<ul id="groupMsg">
+		
+		</ul>
+	</div>
+	
+
+	<form class="container" action="">
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-10">
+				<input type="text" id="m" class="form-control sendBox">	
+			</div>
+
+			<div class="col-lg-2 col-md-2 col-sm-2">
+				<button class="btn btn-danger btn-block">Send</button>
+			</div>
+		</div>
+	</form>
+
+
+	<!-- footer -->
+	<div class="fixed-bottom">
+		<% include ./common/footer.ejs %>
+	</div>
+
+	<% include ./common/scriptFile.ejs %>
+</body>
+</html>

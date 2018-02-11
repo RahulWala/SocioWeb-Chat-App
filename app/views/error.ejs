@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ./common/head.ejs %>
+</head>
+<body>
+	<% include ./common/header.ejs %>
+
+	<% if(messages.error){ %>
+		<div class="alert alert-danger">
+			<strong>
+				<i> <%= messages.error %> </i>
+			</strong>
+		</div>
+	<% } %>
+
+
+	<!-- footer -->
+	<div class="fixed-bottom">
+		<% include ./common/footer.ejs %>
+	</div>
+</body>
+</html>
