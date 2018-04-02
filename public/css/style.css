@@ -1,36 +1,8 @@
-form{
-	background: #1ccea5;
-	padding: 3px;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+.font{
+	font-family: 'Rye', cursive;
 }
 
-form input{
-	border: 0;
-	padding: 10px;
-	width: 90%;
-	margin-right: .5%;
-}
-
-form button{
-	width: 9%;
-	background: #ef4107;
-	border: none;
-	padding: 10px;
-}
-
-#groupMsg{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-#groupMsg li{
-	padding: 5px 10px;
-
-}
-
-#groupMsg li:nth-child(odd) {
-	background: white;
+.card-body{
+	height: 425px;
+	overflow: auto;
 }

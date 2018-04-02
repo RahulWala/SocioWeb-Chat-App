@@ -6,13 +6,75 @@
 <body>
 	<% include ./common/header.ejs%>
 
-	<div class="container">
-		<ul id="groupMsg" class="groupMsg">
-		
-		</ul>
-	</div>
-	
+	<!-- 3 box for chat and commands -->
+	<div class="container-fluid">
+		<div class="row">
 
+
+			<!-- first col for grp chat -->
+			<div class="col-lg-5 col-md-5 col-sm-12">
+
+				<div class="card">
+
+					<div class="card-header">
+						<div class="text-center font">
+							! Group Chat !
+						</div>
+					</div>
+
+					<div class="card-body">
+						<ul id="groupMsg" class="groupMsg">
+		
+						</ul>
+					</div>
+
+					<div class="card-footer">
+						<form class="container" action="">
+							<input type="text" id="m" class="form-control" placeholder="Enter a message....">
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- second col for online users -->
+			<div class="col-lg-5 col-md-5 col-sm-12">
+				
+			</div>
+
+			<!-- third col for all commands login logout -->
+			<div class="col-lg-2 col-md-2 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="text-center font">
+							! Logs Info !
+						</div>
+					</div>
+
+					<div class="card-text showClient">
+						<ol>
+								
+						</ol>
+					</div>
+
+					<div class="card-footer totalClient">
+						
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+<!-- 
 	<form class="container" action="">
 		<div class="row">
 			<div class="col-lg-10 col-md-10 col-sm-10">
@@ -23,11 +85,11 @@
 				<button class="btn btn-danger btn-block">Send</button>
 			</div>
 		</div>
-	</form>
+	</form> -->
 
 
 	<!-- footer -->
-	<div class="fixed-bottom">
+	<div>
 		<% include ./common/footer.ejs %>
 	</div>
 

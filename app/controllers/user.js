@@ -5,12 +5,16 @@ var async 		= require("async");
 var nodemailer	= require('nodemailer');
 var crypto		= require('crypto');
 var find 		= require('find');
+var events  	= require('events');
+
+var eventEmitter = new events.EventEmitter();
+
 
 //express router used to define route
 var appRouter 	= express.Router();
 
 // var server = require('http').Server(app);
-// var io = require('socket.io')(server);
+var io = require('socket.io');
 
 // Loading Models
 var sGroup 		= mongoose.model('Group');
@@ -120,16 +124,17 @@ module.exports.controllerFunction = function(app){
 	});
 
 	appRouter.get('/chat',auth.isLoggedIn,function(req,res){
-		res.render('chat');
-		// res.redirect('/usere/chat');
-
-	})
-
-	// io.on('connection',function(socket){
-	// 	socket.on('chat message',function(msg){
-	// 		io.emit('chat message',msg);
-	// 	});
-	// });
+		// res.render('chat');
+		msg.find().sort({msessage: -1}).limit(500).exec(function(err,msgChat){
+			if(err){
+				res.render('error');
+			}
+			else{
+				res.render('chat');
+				// eventEmitter.emit('sendChat',msgChat.message);
+			}
+		});
+	});
 
 	// ============ LOGOUT ============ //
 	appRouter.get('/logout',function(req,res){
