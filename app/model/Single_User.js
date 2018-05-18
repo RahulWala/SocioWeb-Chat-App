@@ -11,6 +11,6 @@ var sUser = new Schema({
 	mobileNumber	: 	{type:Number, default:''},
 	password		: 	{type:String, default:'', required:true},
 	resetPasswordToken		: {type:String},
-  	resetPasswordExpires	: Date
+  	resetPasswordExpires	: {type:Date,default:Date.now}
 });
 mongoose.model('Single_User',sUser);

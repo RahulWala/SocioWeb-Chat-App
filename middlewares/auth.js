@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var userModel = mongoose.model('Single_User');
-var groupModel = mongoose.model('Group');
+// var groupModel = mongoose.model('Group');
 var responseGenerator	= require('./../libs/responseGenerator');
 
 module.exports.loggedInUser = function(req,res,next){

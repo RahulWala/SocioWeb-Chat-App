@@ -9,7 +9,9 @@
 	<!-- 3 box for chat and commands -->
 	<div class="container-fluid">
 		<div class="row">
-
+ 	
+ 			<!-- To get userName from database -->
+			<input type="hidden" id="showClient" value="<%= user.userName %>">
 
 			<!-- first col for grp chat -->
 			<div class="col-lg-5 col-md-5 col-sm-12">
@@ -37,12 +39,21 @@
 			</div>
 
 			<!-- second col for online users -->
-			<div class="col-lg-5 col-md-5 col-sm-12">
-				
+			<div class="col-lg-4 col-md-5 col-sm-12">
+				<div class="card text-center">
+					<div class="card-header">
+						Users
+					</div>
+					<div class="card-body">
+						<ul id="frndName">
+							
+						</ul>
+					</div>
+				</div>
 			</div>
 
 			<!-- third col for all commands login logout -->
-			<div class="col-lg-2 col-md-2 col-sm-12">
+			<div class="col-lg-3 col-md-2 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<div class="text-center font">
@@ -50,13 +61,7 @@
 						</div>
 					</div>
 
-					<div class="card-text showClient">
-						<ol>
-								
-						</ol>
-					</div>
-
-					<div class="card-footer totalClient">
+					<div class="card-body text-center stripped totalClient">
 						
 					</div>
 				</div>
@@ -74,21 +79,21 @@
 
 
 
-<!-- 
-	<form class="container" action="">
-		<div class="row">
-			<div class="col-lg-10 col-md-10 col-sm-10">
-				<input type="text" id="m" class="form-control sendBox">	
-			</div>
+<!-- // 
+// 	<form class="container" action="">
+// 		<div class="row">
+// 			<div class="col-lg-10 col-md-10 col-sm-10">
+// 				<input type="text" id="m" class="form-control sendBox">	
+// 			</div>
 
-			<div class="col-lg-2 col-md-2 col-sm-2">
-				<button class="btn btn-danger btn-block">Send</button>
-			</div>
-		</div>
-	</form> -->
+// 			<div class="col-lg-2 col-md-2 col-sm-2">
+// 				<button class="btn btn-danger btn-block">Send</button>
+// 			</div>
+// 		</div>
+// 	</form> -->
 
 
-	<!-- footer -->
+	<!-- /*footer*/ -->
 	<div>
 		<% include ./common/footer.ejs %>
 	</div>

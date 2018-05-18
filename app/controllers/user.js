@@ -17,10 +17,10 @@ var appRouter 	= express.Router();
 var io = require('socket.io');
 
 // Loading Models
-var sGroup 		= mongoose.model('Group');
+// var sGroup 		= mongoose.model('Group');
 var sUser  		= mongoose.model('Single_User');
 var msg  		= mongoose.model('Message');
-var oUser		= mongoose.model('OnlineUser');
+var oUser		= mongoose.model('OneToOne');
 
 // Authorization flow
 var responseGenerator	= require('./../../libs/responseGenerator');
@@ -107,7 +107,7 @@ module.exports.controllerFunction = function(app){
 				req.flash('error','There is some error');
 				res.render('error');
 			}else if(foundUser == null || foundUser == undefined || foundUser.email == undefined || foundUser.password == null){
-				console.log("error due to user info",foundUser);
+				console.log("error due to user info : ",foundUser);
 				// var myResponse = responseGenerator.generate(true,"Check your Email Id and Password",404,null);
 				// res.send(myResponse);
 				req.flash('error','Invalid Username or Password');
@@ -130,7 +130,10 @@ module.exports.controllerFunction = function(app){
 				res.render('error');
 			}
 			else{
-				res.render('chat');
+				// console.log(req.session.user);
+				res.render('chat',{
+					user:req.session.user
+				});
 				// eventEmitter.emit('sendChat',msgChat.message);
 			}
 		});

@@ -7,7 +7,7 @@ var crypto		= require('crypto');
 //express router used to define route
 var appRouter 	= express.Router();
 
-var sGroup 		= mongoose.model('Group');
+// var sGroup 		= mongoose.model('Group');
 var sUser  	= mongoose.model('Single_User');
 
 var responseGenerator	= require('./../../libs/responseGenerator');
